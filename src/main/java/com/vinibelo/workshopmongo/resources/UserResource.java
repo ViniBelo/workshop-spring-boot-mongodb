@@ -1,5 +1,6 @@
 package com.vinibelo.workshopmongo.resources;
 
+import com.vinibelo.workshopmongo.domain.Post;
 import com.vinibelo.workshopmongo.domain.User;
 import com.vinibelo.workshopmongo.dto.UserDTO;
 import com.vinibelo.workshopmongo.services.UserService;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/users")
-public class UserResources {
+public class UserResource {
     @Autowired
     private UserService service;
 
@@ -50,5 +51,11 @@ public class UserResources {
         user.setId(id);
         user = service.update(user);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User user = service.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
     }
 }
