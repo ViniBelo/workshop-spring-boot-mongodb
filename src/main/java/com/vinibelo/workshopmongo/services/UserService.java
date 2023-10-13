@@ -1,6 +1,7 @@
 package com.vinibelo.workshopmongo.services;
 
 import com.vinibelo.workshopmongo.domain.entities.User;
+import com.vinibelo.workshopmongo.dto.UserDTO;
 import com.vinibelo.workshopmongo.repositories.UserRepository;
 import com.vinibelo.workshopmongo.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,13 @@ public class UserService {
     public User findById(String id) {
         Optional<User> user = repository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+    }
+
+    public User insert(User user) {
+        return repository.insert(user);
+    }
+
+    public User fromDTO(UserDTO userDTO) {
+        return new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
     }
 }
