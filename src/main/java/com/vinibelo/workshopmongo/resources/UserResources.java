@@ -1,6 +1,6 @@
 package com.vinibelo.workshopmongo.resources;
 
-import com.vinibelo.workshopmongo.domain.entities.User;
+import com.vinibelo.workshopmongo.domain.User;
 import com.vinibelo.workshopmongo.dto.UserDTO;
 import com.vinibelo.workshopmongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/users")

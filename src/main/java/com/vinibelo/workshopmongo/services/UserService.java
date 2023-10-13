@@ -1,6 +1,6 @@
 package com.vinibelo.workshopmongo.services;
 
-import com.vinibelo.workshopmongo.domain.entities.User;
+import com.vinibelo.workshopmongo.domain.User;
 import com.vinibelo.workshopmongo.dto.UserDTO;
 import com.vinibelo.workshopmongo.repositories.UserRepository;
 import com.vinibelo.workshopmongo.services.exception.ObjectNotFoundException;

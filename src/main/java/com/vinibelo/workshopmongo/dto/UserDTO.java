@@ -1,6 +1,6 @@
 package com.vinibelo.workshopmongo.dto;
 
-import com.vinibelo.workshopmongo.domain.entities.User;
+import com.vinibelo.workshopmongo.domain.User;
 
 import java.io.Serial;
 import java.io.Serializable;
